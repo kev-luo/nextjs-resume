@@ -82,6 +82,7 @@ export interface NexusGenFieldTypes {
     company: string | null; // String
     endDate: NexusGenScalars['Date'] | null; // Date
     id: string | null; // ID
+    location: string | null; // String
     months: number | null; // Int
     startDate: NexusGenScalars['Date'] | null; // Date
     title: string | null; // String
@@ -109,6 +110,7 @@ export interface NexusGenFieldTypeNames {
     company: 'String'
     endDate: 'Date'
     id: 'ID'
+    location: 'String'
     months: 'Int'
     startDate: 'Date'
     title: 'String'

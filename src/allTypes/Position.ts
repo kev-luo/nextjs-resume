@@ -4,6 +4,7 @@ import { differenceInYears, differenceInMonths } from "date-fns";
 export const Position = objectType({
   name: "Position",
   definition(t) {
+    t.string("location");
     t.id("id");
     t.string("title");
     t.string("company");
