@@ -1,4 +1,4 @@
-import { makeSchema } from "@nexus/schema";
+import { makeSchema, declarativeWrappingPlugin } from "@nexus/schema";
 import path from "path";
 import * as types from "./allTypes";
 
@@ -20,5 +20,10 @@ export const schema = makeSchema({
       URL: "URL",
     },
     debug: process.env.NODE_ENV === "development"
-  }
+  },
+
+  // allow nullable position enddate
+  plugins: [
+    declarativeWrappingPlugin(),
+  ]
 })
