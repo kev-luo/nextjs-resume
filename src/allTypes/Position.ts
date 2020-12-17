@@ -33,5 +33,8 @@ export const Position = objectType({
         )
       }
     })
+    t.list.string("achievements", {
+      resolve: (parent) => parent.achievements
+    })
   }
 })

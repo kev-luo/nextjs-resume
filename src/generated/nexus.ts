@@ -78,6 +78,7 @@ export interface NexusGenFieldTypes {
     website: NexusGenScalars['URL'] | null; // URL
   }
   Position: { // field return type
+    achievements: Array<string | null> | null; // [String]
     company: string | null; // String
     endDate: NexusGenScalars['Date'] | null; // Date
     id: string | null; // ID
@@ -104,6 +105,7 @@ export interface NexusGenFieldTypeNames {
     website: 'URL'
   }
   Position: { // field return type name
+    achievements: 'String'
     company: 'String'
     endDate: 'Date'
     id: 'ID'
