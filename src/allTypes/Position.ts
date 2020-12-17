@@ -1,4 +1,5 @@
 import { objectType } from "@nexus/schema";
+import { differenceInYears, differenceInMonths } from "date-fns";
 
 export const Position = objectType({
   name: "Position",
@@ -11,6 +12,26 @@ export const Position = objectType({
     });
     t.nullable.date("endDate", {
       resolve: (parent) => parent.endDate ? new Date(parent.endDate) : null
+    })
+    t.int("years", {
+      resolve: ({ startDate, endDate }) => {
+        return (
+          differenceInYears(
+            endDate ? new Date(endDate) : new Date(),
+            new Date(startDate)
+          )
+        )
+      }
+    });
+    t.int("months", {
+      resolve: ({ startDate, endDate }) => {
+        return (
+          differenceInMonths(
+            endDate ? new Date(endDate) : new Date(),
+            new Date(startDate)
+          ) % 12
+        )
+      }
     })
   }
 })

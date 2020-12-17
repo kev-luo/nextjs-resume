@@ -14,7 +14,7 @@ export const Query = queryType({
       resolve: () => data.positions
     })
 
-    t.field("position", {
+    t.nullable.field("position", {
       type: Position,
       args: { id: idArg() },
       resolve: (parent, { id }: { id: string }, ctx) => data.positions.find(position => position.id === id)

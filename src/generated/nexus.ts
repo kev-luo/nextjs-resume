@@ -81,8 +81,10 @@ export interface NexusGenFieldTypes {
     company: string | null; // String
     endDate: NexusGenScalars['Date'] | null; // Date
     id: string | null; // ID
+    months: number | null; // Int
     startDate: NexusGenScalars['Date'] | null; // Date
     title: string | null; // String
+    years: number | null; // Int
   }
   Query: { // field return type
     bio: NexusGenRootTypes['Bio'] | null; // Bio
@@ -105,8 +107,10 @@ export interface NexusGenFieldTypeNames {
     company: 'String'
     endDate: 'Date'
     id: 'ID'
+    months: 'Int'
     startDate: 'Date'
     title: 'String'
+    years: 'Int'
   }
   Query: { // field return type name
     bio: 'Bio'
